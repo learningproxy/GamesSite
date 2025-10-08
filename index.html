@@ -1,126 +1,146 @@
 <!--
-  LearningEducation — Educational Interactive Activities
-  Rewritten to present the site as an educational tool (metadata, schema, teacher resources)
-  NOTE: keep all content/licensing legal if you host third-party games.
+  Copyright (c) 2025 DevinDaboiCorporation Games
 -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LearningEducation — Interactive Educational Activities</title>
-
-  <!-- Clear, explicit description for crawlers / filters -->
-  <meta name="description" content="LearningEducation: curated interactive activities and learning exercises for classroom use — teacher guides, learning objectives, and assessment ideas included." />
-  <meta name="keywords" content="education, learning activities, classroom resources, interactive exercises, math games, logic puzzles, teacher resources" />
-  <meta name="author" content="LearningEducation / DevinDaboiCorporation Games" />
-
-  <!-- Avoid using third-party favicons that impersonate other services -->
-  <link rel="icon" href="/assets/favicon-school.png" type="image/png" />
-
-  <!-- Schema.org structured data: identifies this as an educational resource -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"LearningEducation",
-    "url":"https://yourdomain.example/",
-    "description":"Curated interactive activities for classroom learning with teacher guides and learning objectives."
-  }
-  </script>
-
-  <!-- Basic styles -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I-Ready | My Path</title>
+  <link rel="icon" type="image/png" href="https://assets.clever.com/resource-icons/apps/5148b6242e35482071000011/icon_964188f.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
-    :root{ --accent:#2e7d32; --muted:#6b7280; --card-bg:rgba(255,255,255,0.9) }
-    html,body{ height:100%; margin:0; font-family: Roboto, Arial, sans-serif; background:#eef2f7; color:#111 }
-    .container{ max-width:1200px; margin:24px auto; padding:20px; }
-    header{ display:flex; align-items:center; gap:16px; }
-    header img.logo{ width:64px; height:64px; border-radius:8px; }
-    header h1{ margin:0; font-size:1.6rem }
-    header p{ margin:0; color:var(--muted); font-size:0.95rem }
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
 
-    .top-actions{ margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
-    .btn{ background:var(--accent); color:white; padding:8px 12px; border-radius:6px; border:none; cursor:pointer }
-    .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:18px }
-    .card{ background:var(--card-bg); padding:12px; border-radius:10px; box-shadow:0 1px 4px rgba(0,0,0,0.06); display:flex; gap:8px; align-items:center }
-    .card img{ width:72px; height:72px; object-fit:cover; border-radius:8px }
-    .card h3{ margin:0; font-size:1rem }
-    .meta{ color:var(--muted); font-size:0.85rem }
+    footer {
+      color: lightgrey;
+    }
 
-    footer{ margin-top:28px; color:var(--muted); font-size:0.9rem; text-align:center }
+    h3, h2, h1, p {
+      text-align: center;
+    }
 
-    /* educator panel */
-    .educator{ margin-top:20px; padding:12px; border-left:4px solid var(--accent); background:#fff; border-radius:8px }
-    .learning-objective{ font-weight:600; margin-bottom:8px }
-    .teacher-links{ margin-top:8px; display:flex; gap:8px; flex-wrap:wrap }
+    button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-    @media (max-width:520px){
-      header{ flex-direction:column; align-items:flex-start; gap:8px }
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .game-buttons {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 10px;
+    }
+
+    .game-buttons button {
+      width: 150px;
+      height: 150px;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .game-buttons button img {
+      width: 96px;
+      height: 96px;
+      margin-bottom: 10px;
+    }
+
+    .rounded-image {
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="container" role="main">
-    <header>
-      <!-- local favicon/logo rather than remote Google icon -->
-      <img class="logo" src="/assets/logo-learningeducation.png" alt="LearningEducation logo">
-      <div>
-        <h1>LearningEducation — Interactive Activities for Classrooms</h1>
-        <p>Curated activities with suggested lesson plans and learning objectives for teachers.</p>
-      </div>
-    </header>
-
-    <div class="top-actions">
-      <button class="btn" onclick="openGuide()">Teacher Guide</button>
-      <a class="btn" href="/privacy.html" target="_blank" rel="noopener">Privacy & Usage</a>
-      <a class="btn" href="/contact.html" target="_blank" rel="noopener">Contact IT / Admin</a>
+  <div class="game-section">
+    <p style="background-image: url('background.jpg');"></p>
+    <br><br>
+    <h1>learningeducation</h1>
+    <h3>please be patient while the the games load. please go to https://forms.gle/MoJnsC3DV9zodveb8 to submit any game requests</h3>
+    <p>Some of the games may take a while to load.</p>
+    <br><br><br>
+    <div class="game-buttons">
+      <button onclick="openGame('2048/2048.html')"><img src="img/1.webp" class="rounded-image">Play 2048!</button>
+      <button onclick="openGame('baloonstd/baloonstd.html')"><img src="img/2.webp" class="rounded-image">Play Baloons TD!</button>
+      <button onclick="openGame('bitlife/bitlife.html')"><img src="img/3.webp" class="rounded-image">Play Bitlife!</button>
+      <button onclick="openGame('blockblast/blockblast.html')"><img src="img/4.webp" class="rounded-image">Play Block Blast!</button>
+      <button onclick="openGame('ClusterRush/clusterrush.html')"><img src="img/5.webp" class="rounded-image">Play Cluster Rush!</button>
+      <button onclick="openGame('CookieClicker/cookieclicker.html')"><img src="img/6.webp" class="rounded-image">Play Cookie Clicker!</button>
+      <button onclick="openGame('Coreball/coreball.html')"><img src="img/7.webp" class="rounded-image">Play Coreball!</button>
+      <button onclick="openGame('DriveMad/drivemad.html')"><img src="img/8.webp" class="rounded-image">Play Drive Mad!</button>
+      <button onclick="openGame('fnf/fnf.html')"><img src="img/9.webp" class="rounded-image">Play Friday Night Funkin!</button>
+      <button onclick="openGame('Hextris/hextris.html')"><img src="img/10.webp" class="rounded-image">Play Hextris!</button>
+      <button onclick="openGame('Mario/Mario.html')"><img src="img/11.webp" class="rounded-image">Play Mario!</button>
+      <button onclick="openGame('paperio2/paper.html')"><img src="img/12.webp" class="rounded-image">Play Paper.io 2!</button>
+      <button onclick="openGame('polytrack.3-main/polytrack.html')"><img src="img/13.webp" class="rounded-image">Play PolyTrack!</button>
+      <button onclick="openGame('Pong/pong.html')"><img src="img/14.webp" class="rounded-image">Play Pong!</button>
+      <button onclick="openGame('pvz/pvz.html')"><img src="img/15.webp" class="rounded-image">Play PVZ!</button>
+      <button onclick="openGame('Retrobowl/retro.html')"><img src="img/17.webp" class="rounded-image">Play Retrobowl!</button>
+      <button onclick="openGame('sandboxgame/sandbox.html')"><img src="img/18.webp" class="rounded-image">Play Sandbox Game!</button>
+      <button onclick="openGame('slope/slope.html')"><img src="img/19.webp" class="rounded-image">Play Slope!</button>
+      <button onclick="openGame('Snowrider/snowrider.html')"><img src="img/20.webp" class="rounded-image">Play Snow Rider 3D!</button>
+      <button onclick="openGame('SubwaySurfers/subwaysurfers.html')"><img src="img/21.webp" class="rounded-image">Play Subway Surfers!</button>
+      <button onclick="openGame('Tetris/tetrisgame.html')"><img src="img/22.webp" class="rounded-image">Play Tetris!</button>
+      <button onclick="openGame('TimeShooter/timeshooter.html')"><img src="img/23.webp" class="rounded-image">Play Time Shooter!</button>
+      <button onclick="openGame('Tombofthemask/tomb.html')"><img src="img/24.webp" class="rounded-image">Play Tomb Of The Mask!</button>
+      <button onclick="openGame('WorldsHardestGame/whg.html')"><img src="img/25.webp" class="rounded-image">Play Worlds Hardest Game!</button>
+      <button onclick="openGame('windowkill/windowkill.html')"><img src="img/26.webp" class="rounded-image">Play Windowkill!</button>
+      <button onclick="openGame('yohoho/yohoho.html')"><img src="img/27.webp" class="rounded-image">Play Yohoho.io!</button>
     </div>
-
-    <!-- Educator panel: makes intent explicit -->
-    <section class="educator" aria-labelledby="educator-title">
-      <h2 id="educator-title">For Educators: How to use these activities</h2>
-      <p class="meta">Each activity includes suggested grade levels, estimated class time, and measurable learning objectives. Activities are intended for supervised classroom use.</p>
-      <div class="teacher-links">
-        <a class="btn" href="/lesson-plans.zip" target="_blank" rel="noopener">Download lesson plans</a>
-        <a class="btn" href="/assessment-ideas.pdf" target="_blank" rel="noopener">Assessment ideas</a>
-      </div>
-    </section>
-
-    <!-- Activity grid: keep labels educational -->
-    <section aria-label="Activities list">
-      <div class="grid" id="activityGrid">
-        <div class="card">
-          <img src="img/1.webp" alt="2048 logic exercise">
-          <div>
-            <h3>2048 — Logic & Number Patterns</h3>
-            <p class="meta">Grades 6–9 • 15–25 min • Focus: addition patterns and strategy</p>
-            <p><a href="2048/2048.html" target="_blank" rel="noopener" aria-label="Open 2048 in new tab">Open activity</a></p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="img/2.webp" alt="Balloons TD strategy exercise">
-          <div>
-            <h3>Balloons TD — Planning & Resource Management</h3>
-            <p class="meta">Grades 5–8 • 20–30 min • Focus: budgeting and decision-making</p>
-            <p><a href="baloonstd/baloonstd.html" target="_blank" rel="noopener">Open activity</a></p>
-          </div>
-        </div>
-
-        <!-- Add other items similarly -->
-        <!-- ... -->
-      </div>
-    </section>
-
-    <footer>
-      <p>&copy; LearningEducation — For classroom use only. If you are an IT admin and need the site reviewed, please contact: it-review@yourdomain.example</p>
-    </footer>
   </div>
 
   <script>
-    function openGuide(){
-      alert("Teacher Guide: Each activity contains suggested learning objectives, grade levels, and assessment ideas. Contact IT to request site review and approval.");
+    document.body.style.zoom="70%"
+    function openGame(url){
+      var win = window.open()
+      if (url) {
+        var iframe = document.createElement("iframe")
+        iframe.style.border = "none";
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.margin = "0";
+        iframe.src = url;
+        win.document.body.style.margin = "0";
+        win.document.body.style.height = "100vh";
+        win.document.body.appendChild(iframe);
+      }
     }
   </script>
+
+  <br><br><br><br>
+  <footer>
+    &copy; HAVE FUN!
+  </footer>
 </body>
 </html>
